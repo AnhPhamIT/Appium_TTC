@@ -1,10 +1,9 @@
 package web_app;
 
-import static org.testng.Assert.assertTrue;
-
 import java.net.URL;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -49,7 +48,7 @@ public class googleSearch {
 		String expectedURL = "http://appium.io/";
 		String actualURL = driver.getCurrentUrl();
 		System.out.println("STEP 4: Verify the URL should be " + actualURL);
-		assertTrue(actualURL.contains(expectedURL), "Actual: " + actualURL + " is different from " + expectedURL);
+		Assert.assertTrue("Actual: " + actualURL + " is different from " + expectedURL,actualURL.contains(expectedURL));
 		Thread.sleep(5000);
 	}
 	
